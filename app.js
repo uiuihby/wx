@@ -10,6 +10,30 @@ var parser = new XMLJS.Parser();
 var wechat=require("./wechat")           //  接收的事件
 
 var sendmessage=require("./postMsg")
+var sha1 = require("sha1");
+
+
+
+app.get("/", (req, res, next)=> {
+
+  // 获取微信服务器发送的数据
+  var signature = req.query.signature,
+  timestamp = req.query.timestamp,
+      nonce = req.query.nonce,
+  echostr = req.query.echostr;
+
+  // token、timestamp、nonce三个参数进行字典序排序
+  var arr = [config.test, timestamp, nonce].sort().join('');
+  // sha1加密    
+  var result = sha1(arr);
+  
+  if(result === signature){
+      res.send(echostr);
+  }else{
+      res.send('mismatch');
+  }
+})
+
 app.post('/', function(req, res, next) {                                 // 接收请求，获取xml数据 对请求进行各种回馈
         req.on("data", function(data) {                                  // 将xml解析
             parser.parseString(data.toString(), function(err, result) {  // xml转字符串

@@ -34,6 +34,8 @@ app.get("/", (req, res, next)=> {
   }
 })
 
+
+
 app.post('/', function(req, res, next) {                                 // 接收请求，获取xml数据 对请求进行各种回馈
         req.on("data", function(data) {                                  // 将xml解析
             parser.parseString(data.toString(), function(err, result) {  // xml转字符串

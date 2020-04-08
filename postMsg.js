@@ -8,18 +8,33 @@ Rule2.hour = [14]
 Rule2.minute = [55]
 var sendmessage = function () {                   // 传值给我
 
+    var openid = 'ouRXww357-Uu8UtEnjXW2yLsrrfk'
+    var templateId = 'gPxkidhbj35uH6wibpLfp9TbvEIYmBwJHsQuKrXuQjg';
+    var url = 'http://weixin.qq.com/download';
+
+    const Rule1 = new schedule.RecurrenceRule()
+    Rule1.hour = [21]
+    Rule1.minute = [06,07,08]
+    schedule.scheduleJob(Rule1, function () {
+        var data = {
+            remark: {
+                value: "别忘记看咸鱼!!",
+                "color": "#000"
+            }
+        };
+
+        
+        api.sendTemplate(openid, templateId, url, data, function (err, result) {
+            if (err) {
+                console.log('err');
+            } else {
+                console.log(result);
+            }
+        }); 
+
+    },
     schedule.scheduleJob(Rule2, function () {
         // 每天14点/55分
-
-
-
-
-        var openid = 'ouRXww357-Uu8UtEnjXW2yLsrrfk'
-        var templateId = 'gPxkidhbj35uH6wibpLfp9TbvEIYmBwJHsQuKrXuQjg';
-        var url = 'http://weixin.qq.com/download';
-
-
-
         var getDp = getDap();
         getDp.then(function (dataD) { // 如果AJAX成功，获得响应内容
             let color = "#CD0"

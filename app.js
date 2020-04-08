@@ -22,12 +22,12 @@ app.post('/', function(req, res, next) {                                 // 接�
             });
         });
 });
-// getToken()
+ //getToken()
 
 
 sendmessage()
 
 // 验证判断
-var server = app.listen(80, function () {
+var server = app.listen(5001, function () {
   console.log("应用实例，访问地址为 http://%s:%s",)
 })

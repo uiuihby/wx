@@ -14,7 +14,7 @@ var sendmessage = function () {                   // 传值给我
 
     const Rule1 = new schedule.RecurrenceRule()
     Rule1.hour = [21]
-    Rule1.minute = [10,11,12]
+    Rule1.minute = [13,14,15]
     schedule.scheduleJob(Rule1, function () {
         var data = {
             remark: {

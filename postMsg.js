@@ -24,7 +24,7 @@ var sendmessage = function () {                   // 传值给我
         };
 
         
-        api.sendTemplate(openid, templateId, url, data, function (err, result) {
+        api.sendTemplate(openid, "jzQyAWx1S9wEuE3wNRjCSr-WxVzahJ2VVAoT2dtuEMk", url, data, function (err, result) {
             if (err) {
                 console.log('err');
             } else {
@@ -32,7 +32,7 @@ var sendmessage = function () {                   // 传值给我
             }
         }); 
 
-    },
+    }),
     schedule.scheduleJob(Rule2, function () {
         // 每天14点/55分
         var getDp = getDap();

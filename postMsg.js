@@ -13,8 +13,8 @@ var sendmessage = function () {                   // 传值给我
     var url = 'http://weixin.qq.com/download';
 
     const Rule1 = new schedule.RecurrenceRule()
-    Rule1.hour = [21]
-    Rule1.minute = [13,14,15]
+    Rule1.hour = [20]
+    Rule1.minute = [30]
     schedule.scheduleJob(Rule1, function () {
         var data = {
             remark: {
@@ -65,11 +65,24 @@ var sendmessage = function () {                   // 传值给我
                     "color": color
                 }
             };
-
-            if (dataD['10'] * 1 < 2800) {
-                data.remark.value = "建议购买"
-            } else {
-                data.remark.value = "不建议购买"
+            if (dataD['10'] * 1 < 2700) {
+                data.remark.value = "2000左右处于绝对低位非常非常建议购买"
+            }else if (dataD['10'] * 1 < 2750) {
+                data.remark.value = "2750左右处于低位建议购买"
+            } else if (dataD['10'] * 1 < 2800) {
+                data.remark.value = "2800可以购买"
+            } else if (dataD['10'] * 1 < 2850) {
+                data.remark.value = "2850一般般吧观望"
+            } else if (dataD['10'] * 1 < 2900) {
+                data.remark.value = "建议卖出20%"
+            }else if (dataD['10'] * 1 < 3000) {
+                data.remark.value = "建议卖出30%"
+            }else if (dataD['10'] * 1 < 3100) {
+                data.remark.value = "建议卖出50%"
+            }else if (dataD['10'] * 1 > 3100) {
+                data.remark.value = "建议卖出100%"
+            }else {
+                data.remark.value = "特殊价格自己想想吧"
             }
             data.keyword1.value = dataD['10']
             data.keyword2.value = dataD['264648'];

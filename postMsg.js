@@ -67,7 +67,7 @@ var sendmessage = function () {                   // 传值给我
             }else if (dataD['10'] * 1 > 3100) {
                 data.remark.value = "高于3100建议卖出100%"
             }else {
-                data.remark.value = "特殊价格自己想想吧 一般来说到订了QAQ"
+                data.remark.value = "特殊价格自己想想吧 一般来说到顶了QAQ"
             }
             data.keyword1.value = dataD['10']
             data.keyword2.value = dataD['264648'];

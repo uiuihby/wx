@@ -44,26 +44,30 @@ var sendmessage = function () {                   // 传值给我
                     "color": color
                 }
             };
-            if (dataD['10'] * 1 < 2700) {
-                data.remark.value = "2700左右处于绝对低位非常非常建议购买 80%"
-            }else if (dataD['10'] * 1 < 2750) {
-                data.remark.value = "2750左右处于低位建议购买 40%"
-            } else if (dataD['10'] * 1 < 2800) {
-                data.remark.value = "2800左右可以购买20%"
-            } else if (dataD['10'] * 1 < 2900) {
-                data.remark.value = "2850左右一般般吧观望"
-            } else if (dataD['10'] * 1 < 2950) {
-                data.remark.value = "2950左右建议卖出20%"
-            }else if (dataD['10'] * 1 < 3000) {
-                data.remark.value = "3000左右建议卖出25%"
-            }else if (dataD['10'] * 1 < 3050) {
-                data.remark.value = "3050左右建议卖出30%"
-            }else if (dataD['10'] * 1 < 3100) {
-                data.remark.value = "3100左右建议卖出40%"
-            }else if (dataD['10'] * 1 > 3150) {
-                data.remark.value = "高于3150建议卖出100%"
+            if (dataD['10'] * 1 <= 2675) {
+                data.remark.value = "可以加钱杠杆了"
+            }else if ( dataD['10'] * 1 <= 2725) {
+                data.remark.value = "2700左右可以买入25%"
+            }else if (dataD['10'] * 1  <= 2775) {
+                data.remark.value = "2750左右买入25%"
+            } else if (dataD['10'] * 1 <= 2825) {
+                data.remark.value = "2800买入25%"
+            } else if (dataD['10'] * 1 <= 2855) {
+                data.remark.value = "2850左右买入25%"
+            }else if ( dataD['10'] * 1 < 2900 ) {
+                data.remark.value = "2900左右一般般吧观望"
+            } else if (dataD['10'] * 1 >= 2900) {
+                data.remark.value = "2900以上卖出25%"
+            }else if (dataD['10'] * 1 >= 2950) {
+                data.remark.value = "2950以上卖出25%"
+            }else if (dataD['10'] * 1 >= 3000) {
+                data.remark.value = "3000以上卖出25%"
+            }else if (dataD['10'] * 1 >= 3050) {
+                data.remark.value = "3050以上卖出25%"
+            }else if (dataD['10'] * 1 > 3100) {
+                data.remark.value = "高于3100建议卖出100%"
             }else {
-                data.remark.value = "特殊价格自己想想吧"
+                data.remark.value = "特殊价格自己想想吧 一般来说到订了QAQ"
             }
             data.keyword1.value = dataD['10']
             data.keyword2.value = dataD['264648'];

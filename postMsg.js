@@ -17,16 +17,16 @@ var sendmessage = function () {                   // 传值给我
 
 
 
-    schedule.scheduleJob("1 18 22 25 * *", function () {
+    schedule.scheduleJob("59 26 17 12 * *", function () {
     getBtc.then(function(dataBtc){
         let templateId2="bwY2PmPrNcTlOcHw_Crsn5QMpipiLngeFgHQ8TSSNqM"
-        let btcPrice=dataBtc.body.data[dataD.body.data.length-1].net_price.toFixed(2)
+        let btcPrice=dataBtc.body.data[dataBtc.body.data.length-1].net_price.toFixed(2)
         let data={
             keyword1: {
                 value: btcPrice,
             },
             remark: {
-                value: "一个月买一次 今天的价格是60000左右",
+                value: "一个月买一次 低于5w可以考虑",
             }
         }
         api.sendTemplate(openid,templateId2, url, data, function (err, result) {

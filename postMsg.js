@@ -10,12 +10,47 @@ var sendmessage = function () {                   // 传值给我
     var openid = 'ouRXww357-Uu8UtEnjXW2yLsrrfk'
     var templateId = 'gPxkidhbj35uH6wibpLfp9TbvEIYmBwJHsQuKrXuQjg';
     var url = 'http://weixin.qq.com/download';
+    var getBtc=getDataBtc();
 
+
+
+
+
+
+    schedule.scheduleJob("1 18 22 25 * *", function () {
+    getBtc.then(function(dataBtc){
+        let templateId2="bwY2PmPrNcTlOcHw_Crsn5QMpipiLngeFgHQ8TSSNqM"
+        let btcPrice=dataBtc.body.data[dataD.body.data.length-1].net_price.toFixed(2)
+        let data={
+            keyword1: {
+                value: btcPrice,
+            },
+            remark: {
+                value: "一个月买一次 今天的价格是60000左右",
+            }
+        }
+        api.sendTemplate(openid,templateId2, url, data, function (err, result) {
+            if (err) {
+                console.log('err');
+            } else {
+                console.log(result);
+            }
+        }); 
+    })
+})
 
     schedule.scheduleJob("1 55 14 * * *", function () {
         // 每天14点/55分/1s
         var getDp = getDap();
+     
         getDp.then(function (dataD) { // 如果AJAX成功，获得响应内容
+
+        
+
+
+
+
+
             let color = "#CD0"
             if (dataD['264648'] >= 0) {
                 color = "#CD0"
@@ -81,7 +116,7 @@ var sendmessage = function () {                   // 传值给我
                 }
             }); 
 
-
+   
         })
 
     })
@@ -110,6 +145,19 @@ function getDap() {   // 接口获取大盘比
 
     });
 }
+function getDataBtc(){
+
+    return new Promise(function (resolve, reject) {
+        superagent
+            .get("https://www.ibtctrade.com/api/coindata/currency_price_trend?currency=btc&unit=CNY&type=day&language=zh_cn")
+            .then(res => {
+                resolve(res);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    });
+  }
 
 
 module.exports = sendmessage;

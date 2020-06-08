@@ -97,8 +97,8 @@ var sendmessage = function () {                   // 传值给我
                 data.remark.value = "3000以上卖出25%"
             }else if (dataD['10'] * 1 >= 3050) {
                 data.remark.value = "3050以上卖出25%"
-            }else if (dataD['10'] * 1 >= 3150) {
-                data.remark.value = "3150以上卖出25%"
+            }else if (dataD['10'] * 1 >= 3100) {
+                data.remark.value = "3100以上卖出25%"
             }else if (dataD['10'] * 1 > 3150) {
                 data.remark.value = "高于3150建议卖出100%"
             }else {

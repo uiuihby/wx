@@ -89,18 +89,18 @@ var sendmessage = function () {                   // 传值给我
                 data.remark.value = "2800买入25%"
             } else if (dataD['10'] * 1 <= 2855) {
                 data.remark.value = "2850左右买入25%"
-            }else if ( dataD['10'] * 1 < 2900 ) {
+            }else if ( dataD['10'] * 1 < 2940 ) {
                 data.remark.value = "2900左右一般般吧观望"
-            } else if (dataD['10'] * 1 >= 2900) {
-                data.remark.value = "2900以上卖出25%"
-            }else if (dataD['10'] * 1 >= 2950) {
+            } else if (dataD['10'] * 1 >= 2940) {
                 data.remark.value = "2950以上卖出25%"
             }else if (dataD['10'] * 1 >= 3000) {
                 data.remark.value = "3000以上卖出25%"
             }else if (dataD['10'] * 1 >= 3050) {
                 data.remark.value = "3050以上卖出25%"
-            }else if (dataD['10'] * 1 > 3100) {
-                data.remark.value = "高于3100建议卖出100%"
+            }else if (dataD['10'] * 1 >= 3150) {
+                data.remark.value = "3150以上卖出25%"
+            }else if (dataD['10'] * 1 > 3150) {
+                data.remark.value = "高于3150建议卖出100%"
             }else {
                 data.remark.value = "特殊价格自己想想吧 一般来说到顶了QAQ"
             }

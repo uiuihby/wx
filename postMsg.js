@@ -81,8 +81,14 @@ var sendmessage = function () {                   // 传值给我
             };
             dataD['10'] = dataD['10'] * 1
       
-            if (dataD['10'] * 1 <= 2675) {
-                data.remark.value = "可以加钱杠杆了"
+            if (dataD['10'] * 1 <= 2525) {
+                data.remark.value = "杠杆25%"
+            }else if (dataD['10'] * 1 <= 2575) {
+                data.remark.value = "杠杆25%"
+            }else if (dataD['10'] * 1 <= 2625) {
+                data.remark.value = "杠杆25%"
+            }else if (dataD['10'] * 1 <= 2675) {
+                data.remark.value = "杠杆25%"
             }else if ( dataD['10'] * 1 <= 2725) {
                 data.remark.value = "2700左右可以买入25%"
             }else if (dataD['10'] * 1  <= 2775) {

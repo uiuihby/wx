@@ -81,14 +81,16 @@ var sendmessage = function () {                   // 传值给我
             };
             dataD['10'] = dataD['10'] * 1
       
-            if (dataD['10'] * 1 <= 2525) {
-                data.remark.value = "2500左右杠杆25%"
+            if (dataD['10'] * 1 <= 2475) {
+                data.remark.value = "2450左右杠杆20%，已经到了最低仓位了"
+            }if (dataD['10'] * 1 <= 2525) {
+                data.remark.value = "2500左右杠杆20%"
             }else if (dataD['10'] * 1 <= 2575) {
-                data.remark.value = "2550左右杠杆25%"
+                data.remark.value = "2550左右杠杆20%"
             }else if (dataD['10'] * 1 <= 2625) {
-                data.remark.value = "2600左右杠杆25%"
+                data.remark.value = "2600左右杠杆20%"
             }else if (dataD['10'] * 1 <= 2675) {
-                data.remark.value = "2650左右杠杆25%"
+                data.remark.value = "2650左右杠杆20%"
             }else if ( dataD['10'] * 1 <= 2725) {
                 data.remark.value = "2700左右可以买入25%"
             }else if (dataD['10'] * 1  <= 2775) {
@@ -100,7 +102,7 @@ var sendmessage = function () {                   // 传值给我
             }else if ( dataD['10'] * 1 <= 2940 ) {
                 data.remark.value = "2900左右一般般吧观望"
             } else if (dataD['10'] * 1 <= 2975) {
-                data.remark.value = "2950左右卖出25%"
+                data.remark.value = "2950左右观望观望"
             }else if (dataD['10'] * 1 <= 3025) {
                 data.remark.value = "3000左右卖出25%"
             }else if (dataD['10'] * 1 <= 3075) {
@@ -108,7 +110,7 @@ var sendmessage = function () {                   // 传值给我
             }else if (dataD['10'] * 1 <= 3125) {
                 data.remark.value = "3100左右卖出25%"
             }else if (dataD['10'] * 1 > 3125) {
-                data.remark.value = "高于3150建议卖出100%"
+                data.remark.value = "3150建议卖出25%,空仓了"
             }
             data.keyword1.value = dataD['10']
             data.keyword2.value = dataD['264648'];

@@ -104,15 +104,15 @@ var sendmessage = function () {                   // 传值给我
             }else if ( dataD['10'] * 1 < 3000 ) {
                 data.remark.value = "2950左右一般般吧观望"
             }else if (dataD['10'] * 1 >= 3200) {
-                data.remark.value = "3200以上建议卖出100%,空仓了"
+                data.remark.value = "3200以上卖出0.2/仓位比,空仓了"
             } else if (dataD['10'] * 1 >= 3150) {
-                data.remark.value = "3150左右,卖出总份额的1/2"
+                data.remark.value = "3150左右,卖出0.2/仓位比"
             }else if (dataD['10'] * 1 >= 3100) {
-                data.remark.value = "3100左右,卖出总份额的1/3"
+                data.remark.value = "3100左右,卖出0.2/仓位比"
             }else if (dataD['10'] * 1 >= 3050) {
-                data.remark.value = "3050左右,卖出总份额的1/4"
+                data.remark.value = "3050左右,卖出0.2/仓位比"
             }else if (dataD['10'] * 1 >= 3000) {
-                data.remark.value = "3000左右,卖出总份额的1/5"
+                data.remark.value = "3000左右,卖出0.2/仓位比"
             }
             
             data.keyword1.value = dataD['10']

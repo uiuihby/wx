@@ -118,7 +118,9 @@ var sendmessage = function () {                   // 传值给我
             data.keyword1.value = dataD['10']
             data.keyword2.value = dataD['264648'];
             data.keyword3.value = dataD['199112'] + "%";
-
+            if(dataD['10'] * 1 >= 3000 || dataD['10'] * 1 <= 2450){
+                       return 
+            }
             api.sendTemplate(openid, templateId, url, data, function (err, result) {
                 if (err) {
                     console.log('err');
